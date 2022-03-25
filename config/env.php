@@ -1,0 +1,11 @@
+<?php 
+    return[
+        "bd"=>[
+            "host"=>"localhost:3305",
+            "user"=>"root",
+            "password"=>"",
+            "database"=>"consultas",
+            "charset"=>"utf-8"
+        ]
+    ];
+?>
