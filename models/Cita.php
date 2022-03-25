@@ -69,4 +69,27 @@ class Cita
                 ':id'=>$cita->id,
             ]);
     }
+    public function nuevo(Cita $cita)
+    {
+		try 
+		{
+		$sql = "INSERT INTO cita (nombre,consulta,fecha_consulta,fecha_cita,hora_cita) 
+		        VALUES ( :nombre,:consulta,:fecha_consulta,:fecha_cita,:hora_cita)";
+ 
+		$this->conn->prepare($sql)
+		     ->execute(
+				[				 
+                    ':nombre'=>$cita->nombre,
+                    ':consulta'=>$cita->consulta, 
+                    ':fecha_consulta'=>$cita->fecha_consulta, 
+                    ':fecha_cita'=>$cita->fecha_cita,
+                    ':hora_cita'=>$cita->hora_cita 
+                   
+                ]
+			);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
 }
