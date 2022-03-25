@@ -8,9 +8,8 @@
         public function __construct()
         {
             require_once 'models/Cita.php';
-            require_once 'models/Db.php';
-            $db=new Db();
-            $this->model=new Cita($db->getConection());
+            //require_once 'models/Db.php';
+            $this->model=new Cita();
         }
 
         public function getModel(){
@@ -27,11 +26,18 @@
 
         public function editar(){
             if($_SERVER['REQUEST_METHOD']==='POST'){
-                //$cita= new Cita();
+                require_once 'models/Cita.php';
+                $cita = new Cita();
+                $cita->setId($_POST['id']);
+                $cita->setNombre($_POST['nombre']);
+                $cita->setConsulta($_POST['consulta']);
+                $cita->setFecha_consulta($_POST['fconsulta']);
+                $cita->setFecha_cita($_POST['fcita']);
+                $cita->setHora_cita($_POST['hcita']);
+                var_dump( $cita);
+                $this->model->editar($cita);
                 //$cita->nombre=$_POST['nombre'];
                 //$this->model->editar();
-                var_dump( $_POST['nombre']);
-                var_dump( $_POST['consulta']);
                 //$this->model->editar($cita);
             }
 

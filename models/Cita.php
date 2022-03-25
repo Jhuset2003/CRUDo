@@ -10,11 +10,40 @@ class Cita
     private $fecha_cita;
     private $hora_cita;
 
-    public function __construct($conn)
+    public function __construct()
     {
-        $this->conn = $conn;
+        require_once 'models/Db.php';
+        $db=new Db();
+        $this->conn = $db->getConection();
     }
 
+	public function setId($id) {
+		$this->id = $id;
+	}
+
+	public function setNombre($nombre) {
+		$this->nombre = $nombre;
+	}
+
+	public function setConsulta($consulta) {
+		$this->consulta = $consulta;
+	}
+
+	public function setFecha_consulta($fecha_consulta) {
+		$this->fecha_consulta = $fecha_consulta;
+	}
+
+	public function setFecha_cita($fecha_cita) {
+		$this->fecha_cita = $fecha_cita;
+	}
+
+	public function setHora_cita($hora_cita) {
+		$this->hora_cita = $hora_cita;
+	}
+
+    
+
+    
     public function ListCita()
     {
         echo "si imprimer";
