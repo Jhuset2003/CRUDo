@@ -4,8 +4,10 @@
         
         private $id;
         private $nombre;
-        private $fecha;
-        private $hora;
+        private $consulta;
+        private $fecha_consulta;
+        private $fecha_cita;
+        private $hora_cita;
 
         public function __construct($conn)
         {

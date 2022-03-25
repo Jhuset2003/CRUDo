@@ -8,7 +8,7 @@
         public function __construct()
         {
             require_once 'models/Cita.php';
-            include 'models/db.php';
+            require_once 'models/Db.php';
             $db=new Db();
             $this->model=new Cita($db->getConection());
         }
