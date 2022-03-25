@@ -17,7 +17,7 @@
         }
 
         public function index(){
-            echo "hola mundo";
+           // echo "hola mundo";
             $listCita=$this->model->ListCita();
             require_once 'views/header.html';
             require_once 'views/index.html';

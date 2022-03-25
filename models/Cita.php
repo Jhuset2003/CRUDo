@@ -46,7 +46,7 @@ class Cita
     
     public function ListCita()
     {
-        echo "si imprimer";
+        
 
         $sql = "SELECT * FROM cita";
         $query = $this->conn->prepare($sql);
