@@ -7,7 +7,7 @@
             $this->conn=null;
             try {
                 $this->conn= $this->mysql=$this->connect();
-                echo 'conexion exitosa';
+               // echo 'conexion exitosa';
             } catch (PDOException $excepcion) {
                 echo 'Error de conexion' . $excepcion->getMessage();
             } 

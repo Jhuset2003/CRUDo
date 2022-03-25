@@ -8,6 +8,7 @@
     //$router->get('inicio', [CitaController::class,'index']);  
     $router->get('inicio', [new CitaController,'index']);  
     $router->get('cita/editar', [new CitaController,'editar']); 
+    $router->post('cita/editar', [new CitaController,'editar']); 
     $router->get('cita', 'fun_cita');
     $router->comprobarRutas();
 ?>

@@ -26,20 +26,20 @@
         }
 
         public function editar(){
+            if($_SERVER['REQUEST_METHOD']==='POST'){
+                //$cita= new Cita();
+                //$cita->nombre=$_POST['nombre'];
+                //$this->model->editar();
+                var_dump( $_POST['nombre']);
+                var_dump( $_POST['consulta']);
+                //$this->model->editar($cita);
+            }
+
             require_once 'views/header.html';
             require_once 'views/editar.html';
             require_once 'views/footer.html';
         }
 
     }
-/*
-    $cita=new Cita($db->getConection());
-    var_dump($db->getConection());
-    $listCita=$cita->ListCita();
-    $citas=$listCita[0];
-   echo "este es citas";
-    echo "<pre/>";
-    var_dump($citas);
-    var_dump($listCita);*/
-   // require_once '../views/prueba.html';
+
 ?>
