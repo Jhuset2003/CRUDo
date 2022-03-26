@@ -1,40 +1,53 @@
-<div class="mt-10">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-  
-          <table class="table-fixed w-full">
-            <thead>
-              <tr class="bg-indigo-500 text-white">
-                <th class="w-20 py-4 ...">ID</th>
-                <th class="w-40 py-4 ...">Nombre/Equipo</th>
-                <th class="w-1/16 py-4 ...">Consulta</th>
-                <th class="w-1/16 py-4 ...">Fecha Consulta</th>
-                <th class="w-28 py-4 ...">Fecha Cita</th>
-                <th class="w-28 py-4 ...">Hora Cita</th>
-                <th class="w-28 py-4 ... ">Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-                <?php foreach($listCita as $list ){ ?>
-              <tr>
-                <td class="py-3 px-6"><?php echo $list['id'] ?></td>
-                <td class="p-3"><?php echo $list['nombre'] ?></td>
-                <td class="p-3 text-center"><?php echo $list['consulta'] ?></td>
-                <td class="p-3 text-center"> <?php echo $list['fecha_consulta'] ?></td>
-                <td class="p-3 text-center">  <?php echo $list['fecha_cita'] ?></td>
-                <td class="p-3 text-center"> <?php echo $list['hora_cita'] ?></td>
-                <td class="p-3">
-                  <button class="bg-red-500 text-white px-3 py-1 rounded-sm">
-                  <i class="fas fa-trash"></i></button>
-                  <form action="?c=cita/editar" method="POST">
-                    <input type="hidden" name="id" id="id" value="<?php echo $list['id'] ?>">
-                    <button type="submit" class="bg-green-500 text-white px-3 py-1 rounded-sm">
-                      <i class="fas fa-pen"></i></button>
-                  </form>
-                </td>
-                
-              </tr>
-              <?php } ?>
-              </div>
-            </div>
-          </div>
+<div class="pt-4 z-0">
+  <h1 class="pb-4 font-['Dela_Gothic_One'] text-center text-[3rem] text-green-500">Lista de Citas</h1>
+  <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+
+      <table class="table-fixed w-full">
+        <thead>
+          <tr class="bg-indigo-500 text-white">
+            <th class="w-20 py-4 ...">ID</th>
+            <th class="w-40 py-4 ...">Nombre/Equipo</th>
+            <th class="w-1/16 py-4 ...">Consulta</th>
+            <th class="w-1/16 py-4 ...">Fecha Consulta</th>
+            <th class="w-28 py-4 ...">Fecha Cita</th>
+            <th class="w-28 py-4 ...">Hora Cita</th>
+            <th class="w-28 py-4 ... ">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach($listCita as $list ){ ?>
+          <tr>
+            <td class="py-3 px-6">
+              <?php echo $list['id'] ?>
+            </td>
+            <td class="p-3">
+              <?php echo $list['nombre'] ?>
+            </td>
+            <td class="p-3 text-center">
+              <?php echo $list['consulta'] ?>
+            </td>
+            <td class="p-3 text-center">
+              <?php echo $list['fecha_consulta'] ?>
+            </td>
+            <td class="p-3 text-center">
+              <?php echo $list['fecha_cita'] ?>
+            </td>
+            <td class="p-3 text-center">
+              <?php echo $list['hora_cita'] ?>
+            </td>
+            <td class="p-3">
+              <button class="bg-red-500 text-white px-3 py-1 rounded-sm">
+                <i class="fas fa-trash"></i></button>
+              <form action="?c=cita/editar" method="POST">
+                <input type="hidden" name="id" id="id" value="<?php echo $list['id'] ?>">
+                <button type="submit" class="bg-green-500 text-white px-3 py-1 rounded-sm">
+                  <i class="fas fa-pen"></i></button>
+              </form>
+            </td>
+
+          </tr>
+          <?php } ?>
+    </div>
+  </div>
+</div>

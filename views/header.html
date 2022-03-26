@@ -1,34 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Dela+Gothic+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Dela+Gothic+One&display=swap"
+        rel="stylesheet">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/a23e6feb03.js"></script>
-    <script src="../assets/js/tailwind.config.js" ></script>
+    <script src="../assets/js/tailwind.config.js"></script>
 </head>
-<body class="">
-    <header class="h-16 bg-blue-200  ">
-        <nav class="flex h-16 justify-between items-center gap-1 px-8  ">
-            <div>
-                <a href="#">CITASLOGO</a>
-            </div>
-            
-            <ul class="flex gap-2 hidden sm:flex">
-                <a class=" bg-purple-500 p-1 rounded cursor-pointer" href="?c=inicio">Inicio</a>
-                <a class=" bg-purple-500 p-1 rounded cursor-pointer" href="?c=cita/listar">Ver citas</a>
-                <a class=" bg-purple-500 p-1 rounded cursor-pointer" href="?c=cita/editar">Editar cita</a>
-                <a class=" bg-purple-500 p-1 rounded cursor-pointer" href="?c=cita/nuevo">Agregar</a>
-                <a class=" bg-purple-500 p-1 rounded cursor-pointer" href="#">menu4</a>
-            </ul>
-            <div>
-                <input type="checkbox" class="peer" >
-                
-                <h1 class="peer-checked:hidden">hola</h1>
-            </div>
 
+<body>
+    <div class="mt-20"></div>
+    <header class="fixed z-50 top-0 w-[100%]">
+        <nav class="bg-white shadow-lg ">
+            <div class="px-4 ">
+                <div class="flex justify-between ">
+                    <div class="flex gap-1 justify-between ">
+                        <div>
+                            <!-- Website Logo -->
+                            <a href="#" class="flex gap-2 items-center py-4 px-2 ">
+                                <i class="far fa-comments text-[2rem] text-green-500"></i>
+                                <span class="font-semibold text-gray-500 text-lg">Soporte tecnico</span>
+                            </a>
+                        </div>
+                        <!-- Primary Navbar items -->
+
+                    </div>
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="?c=inicio"
+                            class="py-4 px-2 text-gray-500 hover:border-b-4 hover:border-green-500 font-semibold hover:text-green-500 transition duration-300">Incio</a>
+                        <a href="?c=cita/listar"
+                            class="py-4 px-2 text-gray-500 hover:border-b-4 hover:border-green-500 font-semibold hover:text-green-500 transition duration-300">Citas</a>
+                        <a href="?c=cita/nuevo"
+                            class="py-4 px-2 text-gray-500 hover:border-b-4 hover:border-green-500 font-semibold hover:text-green-500 transition duration-300">Nueva
+                            Cita</a>
+                    </div>
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden flex items-center">
+                        <button class="outline-none mobile-menu-button">
+                            <svg class=" w-6 h-6 text-gray-500 hover:text-green-500 " x-show="!showMenu" fill="none"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- mobile menu -->
+            <div class="hidden mobile-menu z-50 transition-all duration-300">
+                <ul class="">
+                    <li class="active"><a href="?c=inicio"
+                            class="block text-sm pl-8 px-2 py-4 font-semibold hover:bg-green-500 hover:text-white transition duration-300">Inicio</a></li>
+                    <li><a href="?c=cita/listar"
+                            class="block text-sm pl-8 px-2 py-4 font-semibold hover:bg-green-500 hover:text-white transition duration-300">Citas</a></li>
+                    <li><a href="?c=cita/nuevo"
+                            class="block text-sm pl-8 px-2 py-4 font-semibold hover:bg-green-500 hover:text-white transition duration-300">Nueva Cita</a></li>
+                    
+                </ul>
+            </div>
+            <script>
+                const btn = document.querySelector("button.mobile-menu-button");
+                const menu = document.querySelector(".mobile-menu");
+
+                btn.addEventListener("click", () => {
+                    menu.classList.toggle("hidden");
+                });
+            </script>
         </nav>
     </header>
