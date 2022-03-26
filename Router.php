@@ -15,7 +15,7 @@
         
         public function comprobarRutas(){
             //$urlActual = $_SERVER['PATH_INFO'] ?? '/';
-            $urlActual =$_REQUEST['c']?? '/';
+            $urlActual =$_REQUEST['c']?? 'inicio';
             $metodo = $_SERVER['REQUEST_METHOD'];
            // echo $urlActual;
            // echo $metodo;

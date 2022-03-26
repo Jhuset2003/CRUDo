@@ -4,22 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Dela+Gothic+One&display=swap" rel="stylesheet">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/a23e6feb03.js"></script>
+    <script src="../assets/js/tailwind.config.js" ></script>
 </head>
-<body>
-    <header class="h-16 bg-blue-200  w-[100%]">
+<body class="">
+    <header class="h-16 bg-blue-200  ">
         <nav class="flex h-16 justify-between items-center gap-1 px-8  ">
             <div>
                 <a href="#">CITASLOGO</a>
             </div>
             
-            <ul class="flex gap-2">
+            <ul class="flex gap-2 hidden sm:flex">
                 <a class=" bg-purple-500 p-1 rounded cursor-pointer" href="?c=inicio">Inicio</a>
+                <a class=" bg-purple-500 p-1 rounded cursor-pointer" href="?c=cita/listar">Ver citas</a>
                 <a class=" bg-purple-500 p-1 rounded cursor-pointer" href="?c=cita/editar">Editar cita</a>
                 <a class=" bg-purple-500 p-1 rounded cursor-pointer" href="?c=cita/nuevo">Agregar</a>
                 <a class=" bg-purple-500 p-1 rounded cursor-pointer" href="#">menu4</a>
             </ul>
+            <div>
+                <input type="checkbox" class="peer" >
+                
+                <h1 class="peer-checked:hidden">hola</h1>
+            </div>
+
         </nav>
     </header>

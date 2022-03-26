@@ -1,37 +1,14 @@
-<div class="mt-10">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-  
-          <table class="table-fixed w-full">
-            <thead>
-              <tr class="bg-indigo-500 text-white">
-                <th class="w-20 py-4 ...">ID</th>
-                <th class="w-40 py-4 ...">Nombre/Equipo</th>
-                <th class="w-1/16 py-4 ...">Consulta</th>
-                <th class="w-1/16 py-4 ...">Fecha Consulta</th>
-                <th class="w-28 py-4 ...">Fecha Cita</th>
-                <th class="w-28 py-4 ...">Hora Cita</th>
-                <th class="w-28 py-4 ... ">Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-                <?php foreach($listCita as $list ){ ?>
-              <tr>
-                <td class="py-3 px-6"><?php echo $list['id'] ?></td>
-                <td class="p-3"><?php echo $list['nombre'] ?></td>
-                <td class="p-3 text-center"><?php echo $list['consulta'] ?></td>
-                <td class="p-3 text-center"> <?php echo $list['fecha_consulta'] ?></td>
-                <td class="p-3 text-center">  <?php echo $list['fecha_cita'] ?></td>
-                <td class="p-3 text-center"> <?php echo $list['hora_cita'] ?></td>
-                <td class="p-3">
-                  <button class="bg-red-500 text-white px-3 py-1 rounded-sm">
-                  <i class="fas fa-trash"></i></button>
-                  <button class="bg-green-500 text-white px-3 py-1 rounded-sm">
-                  <i class="fas fa-pen"></i></button>
-                </td>
-                
-              </tr>
-              <?php } ?>
-              </div>
-            </div>
-          </div>
+<div class="grid grid-cols-1 sm:grid-cols-2 h-[80vh]">
+    <div class="font-['Cabin']">
+        <h1 class="font-['Dela_Gothic_One'] font-normal">Bienvenido al sistema de gestion de citas en linea</h1>
+        <div class="font-bold">
+            <h3>Aparta tu cita ya!</h3>
+            <h3>Accede desde el siguiente boton par pedir una cita </h3>
+            <br>
+        </div>
+        <a class=" shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" href="?c=cita/nuevo">Pedir cita</a>
+    </div>
+    <div class="">
+        <img src="assets/images/5127314.jpg" alt="No fount" srcset="">
+    </div>
+</div>
