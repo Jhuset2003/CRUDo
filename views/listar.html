@@ -8,7 +8,7 @@
           <?php for($i = 1; $i <= count($listCita); $i++){ ?>
           <tr class="bg-indigo-500 text-white flex flex-col border-l-2 border-y-2 border-gray-300">
             <th class="py-2 ... border-b-2 border-indigo-500">ID</th>
-            <th class="py-2 ... border-b-2 border-indigo-500">Nombre/Equipo</th>
+            <th class="py-2 ... h-20 border-b-2 border-indigo-500">Nombre/Equipo</th>
             <th class="py-2 ... h-40 border-b-2 border-indigo-500">Consulta</th>
             <th class="py-2 ... border-b-2 border-indigo-500">Fecha Consulta</th>
             <th class="py-2 ... border-b-2 border-indigo-500">Fecha Cita</th>
@@ -24,7 +24,7 @@
             <td class="py-2 pl-4 border-b-2 border-gray-300 ">
               <?php echo $list['id'] ?>
             </td>
-            <td class="py-2 pl-4 border-b-2 border-gray-300 ">
+            <td class="py-2 pl-4 border-b-2 border-gray-300 overflow-scroll h-20 sm:h-auto ">
               <?php echo $list['nombre'] ?>
             </td>
             <td class="py-2 pl-4 border-b-2 border-gray-300 overflow-scroll h-40 sm:h-auto">
