@@ -3,40 +3,91 @@
   <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
-      <table class="table-fixed w-full">
+      <table class="table-fixed w-full flex grow-1 flex-row sm:flex-col px-4 sm:hidden">
+        <thead class="flex flex-col gap-y-4 sm:hidden w-[50%] items-stretch">
+          <?php for($i = 1; $i <= count($listCita); $i++){ ?>
+          <tr class="bg-indigo-500 text-white flex flex-col border-l-2 border-y-2 border-gray-300">
+            <th class="py-2 ... border-b-2 border-indigo-500">ID</th>
+            <th class="py-2 ... border-b-2 border-indigo-500">Nombre/Equipo</th>
+            <th class="py-2 ... h-40 border-b-2 border-indigo-500">Consulta</th>
+            <th class="py-2 ... border-b-2 border-indigo-500">Fecha Consulta</th>
+            <th class="py-2 ... border-b-2 border-indigo-500">Fecha Cita</th>
+            <th class="py-2 ... border-b-2 border-indigo-500">Hora Cita</th>
+            <th class="py-2 ... border-b-2 border-indigo-500">Acciones</th>
+          </tr>
+          <?php } ?>
+        </thead>
+
+        <tbody class="flex flex-col gap-y-4 sm:gap-y-0 w-full sm:flex-none sm:table">
+          <?php foreach($listCita as $list ){ ?>
+          <tr class="flex flex-col sm:flex-row  border-2 border-gray-300 sm:flex-none sm:table sm:w-full ">
+            <td class="py-2 pl-4 border-b-2 border-gray-300 ">
+              <?php echo $list['id'] ?>
+            </td>
+            <td class="py-2 pl-4 border-b-2 border-gray-300 ">
+              <?php echo $list['nombre'] ?>
+            </td>
+            <td class="py-2 pl-4 border-b-2 border-gray-300 overflow-scroll h-40 sm:h-auto">
+              <?php echo $list['consulta'] ?>
+            </td>
+            <td class="py-2 pl-4 border-b-2 border-gray-300">
+              <?php echo substr($list['fecha_consulta'], 0, 16) ?>
+            </td>
+            <td class="py-2 pl-4 border-b-2 border-gray-300">
+              <?php echo $list['fecha_cita'] ?>
+            </td>
+            <td class="py-2 pl-4 border-b-2 border-gray-300">
+              <?php echo $list['hora_cita'] ?>
+            </td>
+            <td class="py-[0.31rem] pl-4 flex">
+              <button class="bg-red-500 text-white px-3  rounded-sm">
+                <i class="fas fa-trash"></i></button>
+              <form action="?c=cita/editar" method="POST">
+                <input type="hidden" name="id" id="id" value="<?php echo $list['id'] ?>">
+                <button type="submit" class="bg-green-500 text-white px-3 py-1 rounded-sm">
+                  <i class="fas fa-pen"></i></button>
+              </form>
+            </td>
+
+          </tr>
+          <?php } ?>
+        </tbody>
+      </table>
+
+      <table class="table-fixed w-full hidden sm:table">
         <thead>
           <tr class="bg-indigo-500 text-white">
-            <th class="w-20 py-4 ...">ID</th>
-            <th class="w-40 py-4 ...">Nombre/Equipo</th>
-            <th class="w-1/16 py-4 ...">Consulta</th>
-            <th class="w-1/16 py-4 ...">Fecha Consulta</th>
-            <th class="w-28 py-4 ...">Fecha Cita</th>
-            <th class="w-28 py-4 ...">Hora Cita</th>
-            <th class="w-28 py-4 ... ">Acciones</th>
+            <th class=" w-8 py-4 ... ">ID</th>
+            <th class=" py-4 ...">Nombre / Equipo</th>
+            <th class=" w-40 md:w-[15rem] py-4 ...">Consulta</th>
+            <th class=" py-4 ...">Fecha Consulta</th>
+            <th class="py-4 ...">Fecha Cita</th>
+            <th class=" py-4 ...">Hora Cita</th>
+            <th class=" py-4 ... ">Acciones</th>
           </tr>
         </thead>
         <tbody>
           <?php foreach($listCita as $list ){ ?>
           <tr>
-            <td class="py-3 px-6">
+            <td class="py-3 px-2">
               <?php echo $list['id'] ?>
             </td>
             <td class="p-3">
               <?php echo $list['nombre'] ?>
             </td>
-            <td class="p-3 text-center">
+            <td class="p-3 ">
               <?php echo $list['consulta'] ?>
             </td>
-            <td class="p-3 text-center">
+            <td class="p-3 ">
               <?php echo $list['fecha_consulta'] ?>
             </td>
-            <td class="p-3 text-center">
+            <td class="p-3 ">
               <?php echo $list['fecha_cita'] ?>
             </td>
-            <td class="p-3 text-center">
+            <td class="p-3 ">
               <?php echo $list['hora_cita'] ?>
             </td>
-            <td class="p-3">
+            <td class="p-3 flex flex-wrap">
               <button class="bg-red-500 text-white px-3 py-1 rounded-sm">
                 <i class="fas fa-trash"></i></button>
               <form action="?c=cita/editar" method="POST">
@@ -48,6 +99,8 @@
 
           </tr>
           <?php } ?>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
