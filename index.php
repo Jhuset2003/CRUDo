@@ -10,6 +10,7 @@
     $router->get('inicio', [new CitaController,'index']);
     $router->post('cita/guardar', [new CitaController,'guardar']);
     $router->get('cita/listar', [new CitaController,'listar']);
+    $router->post('cita/listar', [new CitaController,'listar']);
     $router->get('cita/editar', [new CitaController,'editar']); 
     $router->post('cita/editar', [new CitaController,'editar']); 
     $router->get('cita/nuevo', [new CitaController,'nuevo']); 
