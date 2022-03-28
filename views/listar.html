@@ -87,9 +87,12 @@
             <td class="p-3 ">
               <?php echo $list['hora_cita'] ?>
             </td>
-            <td class="p-3 flex flex-wrap">
-              <button class="bg-red-500 text-white px-3 py-1 rounded-sm">
-                <i class="fas fa-trash"></i></button>
+            <td class="p-3 flex flex-wrap" >
+              <form action="?c=cita/eliminar" method="POST">
+                <input type="hidden" name="id" id="id" value="<?php echo $list['id'] ?>">
+                <button class="bg-red-500 text-white px-3 py-1 rounded-sm" type="submit" onclick="confirm('¿Seguro de eliminar este registro?');">
+                  <i class="fas fa-trash"></i></button>
+              </form>
               <form action="?c=cita/editar" method="POST">
                 <input type="hidden" name="id" id="id" value="<?php echo $list['id'] ?>">
                 <button type="submit" class="bg-green-500 text-white px-3 py-1 rounded-sm">

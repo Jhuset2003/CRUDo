@@ -75,8 +75,6 @@ class Cita
     }
     public function nuevo(Cita $cita)
     {
-		try 
-		{
 		$sql = "INSERT INTO cita (nombre,consulta,fecha_consulta,fecha_cita,hora_cita) 
 		        VALUES ( :nombre,:consulta,:fecha_consulta,:fecha_cita,:hora_cita)";
 
@@ -91,11 +89,7 @@ class Cita
                    
                 ]
 			);
-		} catch (Exception $e) 
-		{
-			die($e->getMessage());
 		}
-	}
 
     public function Obtener($id)
     {
@@ -103,4 +97,10 @@ class Cita
         $sql->execute([':id'=>$id]);
         return $sql->fetch(PDO::FETCH_OBJ);
 	}
+    public function Eliminar($id)
+	{
+        $sql = $this->conn->prepare("DELETE FROM cita WHERE id =:id");
+        $sql->execute([':id'=>$id]);
+        return $sql->fetch(PDO::FETCH_OBJ);
+}
 }
