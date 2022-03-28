@@ -1,37 +1,17 @@
-<div class="mt-10">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-  
-          <table class="table-fixed w-full">
-            <thead>
-              <tr class="bg-indigo-500 text-white">
-                <th class="w-20 py-4 ...">ID</th>
-                <th class="w-40 py-4 ...">Nombre/Equipo</th>
-                <th class="w-1/16 py-4 ...">Consulta</th>
-                <th class="w-1/16 py-4 ...">Fecha Consulta</th>
-                <th class="w-28 py-4 ...">Fecha Cita</th>
-                <th class="w-28 py-4 ...">Hora Cita</th>
-                <th class="w-28 py-4 ... ">Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-                <?php foreach($listCita as $list ){ ?>
-              <tr>
-                <td class="py-3 px-6"><?php echo $list['id'] ?></td>
-                <td class="p-3"><?php echo $list['nombre'] ?></td>
-                <td class="p-3 text-center"><?php echo $list['consulta'] ?></td>
-                <td class="p-3 text-center"> <?php echo $list['fecha_consulta'] ?></td>
-                <td class="p-3 text-center">  <?php echo $list['fecha_cita'] ?></td>
-                <td class="p-3 text-center"> <?php echo $list['hora_cita'] ?></td>
-                <td class="p-3">
-                  <button class="bg-red-500 text-white px-3 py-1 rounded-sm" >
-                  <a href="?c=Cita&a=Eliminar&id=<?php echo $list['id']; ?> "><i class="fas fa-trash"></i></a></button>
-                  <button class="bg-green-500 text-white px-3 py-1 rounded-sm">
-                  <i class="fas fa-pen"></i></button>
-                </td>
-                
-              </tr>
-              <?php } ?>
-              </div>
-            </div>
-          </div>
+<div class="grid grid-cols-1 sm:grid-cols-2 h-[80vh]">
+    <div class="font-['Cabin'] px-6 flex flex-col justify-center">
+        <h1 class="font-['Dela_Gothic_One'] font-normal text-[1.5rem] md:text-[2rem] lg:text-[3rem] text-green-500">Bienvenido al sistema de gestion de citas en
+            linea</h1>
+        <div class="font-bold">
+            <h3 class="text-[1.1rem] md:text-[1.3rem] lg:text-[1.5rem]">Aparta tu cita ya!</h3>
+            <br>
+        </div>
+        <div class="text-center pb-2">
+            <a class=" shadow bg-indigo-500 hover:bg-indigo-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 md:px-6 md:py-3 md:text-[1.1rem] lg:px-8 lg:py-4 lg:text-[1.3rem] rounded"
+                href="?c=cita/nuevo">Pedir cita</a>
+        </div>
+    </div>
+    <div class="flex items-center">
+        <img src="assets/images/5127314.jpg" alt="No fount" srcset="">
+    </div>
+</div>

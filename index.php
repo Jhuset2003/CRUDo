@@ -5,11 +5,16 @@
     //echo CitaController::class;
    
     $router =new Router();
-    //$router->get('inicio', [CitaController::class,'index']);  
-    $router->get('inicio', [new CitaController,'index']);  
+    //$router->get('inicio', [CitaController::class,'index']);
+    $router->get('index.php', [new CitaController,'index']);
+    $router->get('inicio', [new CitaController,'index']);
+    $router->post('cita/guardar', [new CitaController,'guardar']);
+    $router->get('cita/listar', [new CitaController,'listar']);
     $router->get('cita/editar', [new CitaController,'editar']); 
     $router->post('cita/editar', [new CitaController,'editar']); 
     $router->get('cita/nuevo', [new CitaController,'nuevo']); 
-    $router->post('cita/nuevo', [new CitaController,'nuevo']); 
+    $router->post('cita/nuevo', [new CitaController,'nuevo']);
+    $router->get('cita/eliminar', [new CitaController,'eliminar']); 
+    $router->post('cita/eliminar', [new CitaController,'eliminar']);  
     $router->comprobarRutas();
 ?>

@@ -21,6 +21,10 @@ class Cita
 		$this->id = $id;
 	}
 
+    public function getId(){
+        return $this->id;
+    }
+
 	public function setNombre($nombre) {
 		$this->nombre = $nombre;
 	}
@@ -73,7 +77,7 @@ class Cita
     {
 		$sql = "INSERT INTO cita (nombre,consulta,fecha_consulta,fecha_cita,hora_cita) 
 		        VALUES ( :nombre,:consulta,:fecha_consulta,:fecha_cita,:hora_cita)";
- 
+
 		$this->conn->prepare($sql)
 		     ->execute(
 				[				 
@@ -85,13 +89,18 @@ class Cita
                    
                 ]
 			);
+		}
+
+    public function Obtener($id)
+    {
+        $sql = $this->conn->prepare("SELECT * FROM cita WHERE id =:id");
+        $sql->execute([':id'=>$id]);
+        return $sql->fetch(PDO::FETCH_OBJ);
+	}
+    public function Eliminar($id)
+	{
+        $sql = $this->conn->prepare("DELETE FROM cita WHERE id =:id");
+        $sql->execute([':id'=>$id]);
+        return $sql->fetch(PDO::FETCH_OBJ);
 }
-    public function eliminar($id)
-        {
-            $sql = "DELETE FROM cita WHERE id=$id";
-            $this->conn->prepare($sql)
-                ->execute([$id]);
-        }
-   
-    
 }
