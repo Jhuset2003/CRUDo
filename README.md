@@ -7,7 +7,7 @@
 
 *Se trabajo en la creacion de un crud para pedir citas tecnicas, para su creacion se implemento la metodologia MVC (modelo vista controlador)*
 
-Requerimientos técnicos 
+## Requerimientos técnicos 
 
 [MINI backlog](https://trello.com/b/smkEmbnz/crudo)
  
