@@ -64,9 +64,7 @@
             if($_SERVER['REQUEST_METHOD']==='POST'){
                 $id=$_POST['id'];
                 $this->model->Eliminar($id);
-                require_once 'views/header.html';
-                require_once 'views/eliminar.html';
-                require_once 'views/footer.html';
+                header('Location: index.php?c=cita/listar');
             }
         }
        
