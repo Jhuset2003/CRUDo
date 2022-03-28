@@ -52,9 +52,33 @@ Requisitos Técnicos:
 
 **Imagenes de muestra**
 #
+Inicio
+![muestraCodigoCarpetas](https://github.com/Jhuset2003/CRUDo/blob/dev/assets/imgReadme/Inicio.png)
+Citas
+![muestraCodigoCarpetas](https://github.com/Jhuset2003/CRUDo/blob/dev/assets/imgReadme/Lista%20cita.png)
+Creacion de cita
+![muestraCodigoCarpetas](https://github.com/Jhuset2003/CRUDo/blob/dev/assets/imgReadme/Creacion%20cita.png)
 #
 **Muestra codigos**
 #
+Carpetas
+![muestraCodigoCarpetas](https://github.com/Jhuset2003/CRUDo/blob/dev/assets/imgReadme/Carpetas.png)
+#
+Conexion con la base de datos
+![muestraCodigoCarpetas](https://github.com/Jhuset2003/CRUDo/blob/dev/assets/imgReadme/Conexion%20base%20datos.png)
+#
+Controlador
+![muestraCodigoCarpetas](https://github.com/Jhuset2003/CRUDo/blob/dev/assets/imgReadme/Controlador.png)
+#
+Modelos
+![muestraCodigoCarpetas](https://github.com/Jhuset2003/CRUDo/blob/dev/assets/imgReadme/Modelo.png)
+#
+![muestraCodigoCarpetas](https://github.com/Jhuset2003/CRUDo/blob/dev/assets/imgReadme/model%202.png)
+#
+Links de las Views
+![muestraCodigoCarpetas](https://github.com/Jhuset2003/CRUDo/blob/dev/assets/imgReadme/Links%20con%20router.png)
+#
+![muestraCodigoCarpetas](https://github.com/Jhuset2003/CRUDo/blob/dev/assets/imgReadme/metodos%20de%20conexion%20links.png)
 #
 ---
 # Tecnologias usadas:
