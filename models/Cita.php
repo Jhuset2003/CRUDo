@@ -71,8 +71,6 @@ class Cita
     }
     public function nuevo(Cita $cita)
     {
-		try 
-		{
 		$sql = "INSERT INTO cita (nombre,consulta,fecha_consulta,fecha_cita,hora_cita) 
 		        VALUES ( :nombre,:consulta,:fecha_consulta,:fecha_cita,:hora_cita)";
  
@@ -87,9 +85,13 @@ class Cita
                    
                 ]
 			);
-		} catch (Exception $e) 
-		{
-			die($e->getMessage());
-		}
-	}
+}
+    public function eliminar($id)
+        {
+            $sql = "DELETE FROM cita WHERE id=$id";
+            $this->conn->prepare($sql)
+                ->execute([$id]);
+        }
+   
+    
 }

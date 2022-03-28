@@ -65,7 +65,11 @@
             require_once 'views/nuevo.html';
             require_once 'views/footer.html';
         }
-
+        public function Eliminar(){
+            $this->model->Eliminar($_REQUEST['id']);
+            header('Location: index.html');
+        }
+       
     }
 
 ?>
